@@ -63,7 +63,7 @@ const FileList = () => {
   return (
       
     <>
-    <main>
+    
       <FileModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} handleFileUpload={handleFileUpload} handleFileChange={handleFileChange} folderId={id} handleFolderIdChange={handleFolderIdChange}/>
 
       {/* <main>
@@ -77,7 +77,7 @@ const FileList = () => {
       </main> */}
 
       <FileTable filesList={filesList} setFilesList={setFilesList} openModal={openModal}/>
-      </main>
+      
 
       {/* Toast container to display notifications */}
       <ToastContainer />

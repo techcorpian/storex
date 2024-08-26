@@ -1,0 +1,7 @@
+main{
+    padding: 10px 26px;
+  }
+  
+  .group:hover .group-hover\\:block {
+    display: block;
+  }

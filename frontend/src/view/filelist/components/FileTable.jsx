@@ -5,7 +5,7 @@ import { FaHome } from "react-icons/fa";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import DownloadButton from './DownloadButton';
-import Table from '../../shared/UIElements/Tables.jsx'; // Import the Table component
+import PageLayout from '../../shared/UIElements/PageLayout.jsx'; // Import the Table component
 
 const FileTable = ({filesList, setFilesList, openModal}) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -53,28 +53,8 @@ const columnsDatas = filesList.map((file) => ({
   return (
     <>
 
-      <div className='px-3 text-md border-b pb-2'>
-      {/* <Link to='/home' className='float-right px-4 rounded-full bg-red-800 text-white text-sm py-1'>Back</Link> */}
-          <div className='flex text-sky-900'>
-              <Link to='/home' className='mt-1 text-sky-600'><FaHome/> </Link>
-              <span className='px-2 text-sky-600'> / </span>
-              <Link to='/projects' className='text-sky-600'>Projects</Link>
-              <span className='px-2 text-sky-600'> / </span>
-              <Link onClick={handleGoBack} className='text-sky-600'> Folders </Link>
-              <span className='px-2 text-sky-600'> / </span>
-              <span> Files </span>
-          </div>
-      </div>
-      <div className='flex justify-between pb-4 py-3 '>
-      <h1 className='text-3xl px-3 font-bold text-sky-700'>File Storage</h1>
-      <Link onClick={openModal} className="btn2 flex flex-row items-center mx-3 text-md invisible md:visible">Add Files<span><BiPlus className='icon'></BiPlus></span></Link>
-      <Link onClick={openModal} className="md:hidden my-2 mx-3"><span className="border border-sky-600 hover:bg-sky-600 hover:text-white text-2xl font-thin text-sky-600 rounded-md px-2 py-0">+</span></Link>
-      </div>
-
-      <div className='layout-box mx-3'>
-
       {/* Use the Table component with pagination props */}
-      <Table
+      <PageLayout
         datas={filesList}
         data={filteredCustomers}
         columns={columns}
@@ -82,7 +62,7 @@ const columnsDatas = filesList.map((file) => ({
         searchTerm={searchTerm}
 
       />
-      </div>
+      
     </>
   )
 }

@@ -23,8 +23,9 @@
     border-radius: 0px;
     padding: 0.3rem 0.4rem;
     text-decoration: none;
-    color: rgb(240 249 255);
+    color: rgb(230, 230, 230);
     font-size: 15px;
+    border: 1px solid transparent;
 }
 
 .profile-card{
@@ -43,15 +44,17 @@
 
   .side-links li a:active,
   .side-links li a.active {
-    background: rgb(12 74 110);
+    background: rgb(42, 50, 66);
     color: rgb(240 249 255);
     border-radius: 5px;
-    border: 1px solid rgb(3 105 161);
+    /* border: 1px solid rgb(202, 202, 202); */
   }
 
   .side-links li a:hover{
-    background: rgb(12 74 110);
+    background: rgb(42, 50, 66);
     border-radius: 5px;
+    color: white;
+    border: 1px solid transparent;
   }
 
   .side-links img{

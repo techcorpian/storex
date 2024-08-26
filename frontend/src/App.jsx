@@ -6,7 +6,7 @@ import ProtectedRoute from './view/auth/ProtectedRoute';
 import FilesList from './view/filelist/pages/FileList';
 import Projects from './view/project/pages/Projects';
 import Folders from './view/folders/pages/Folders';
-import MainNavigation from './view/shared/components/MainNavigation';
+import Menu from './view/shared/Menu';
 import './App.css'
 
 function AppWrapper() {
@@ -21,7 +21,7 @@ function App() {
   const location = useLocation();
   return (
     <>
-        {location.pathname !== '/' && location.pathname !== '/register' ? <MainNavigation /> : ''}
+        {location.pathname !== '/' && location.pathname !== '/register' ? <Menu /> : ''}
             <Routes>
               <Route path="/" element={<Login />} />
               {/* <Route path="/register" element={<Register />} /> */}

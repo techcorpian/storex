@@ -87,9 +87,9 @@ const SideLinks = () => {
         </li>
         )
       })}
-      <li className='pt-[100px]'>
-        <NavLink className="flex justify-between items-center" onClick={handleLogout}><div className="flex items-center"><CiLogout /><span className='ml-2'>Logout</span></div></NavLink>
-      </li>
+      <div className='pt-[100px] px-3'>
+        <Link className="flex justify-between items-center bg-yellow-600 p-2 rounded-lg" onClick={handleLogout}><div className="flex items-center"><CiLogout /><span className='ml-2'>Logout</span></div></Link>
+      </div>
       </div>
 
     </ul>
