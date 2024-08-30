@@ -4,6 +4,7 @@ class Project {
     constructor(project) {
         this.name = project.name;
         this.location_id = project.location_id;
+        this.type_id = project.type_id;
     }
 
     static insertProject(newProject, result) {
@@ -57,8 +58,8 @@ class Project {
     // Get locations
     static getLocations(){  
         return new Promise((resolve, reject) => {
-            const sql = `SELECT l.name FROM locations l LEFT JOIN projects p ON l.id = p.location_id WHERE l.blockstatus = '0' AND l.deletestatus = '0'`;
-            pool.query(sql, [id], (err, results) => {
+            const sql = `SELECT l.name, l.id FROM locations l WHERE l.blockstatus = '0' AND l.deletestatus = '0'`;
+            pool.query(sql, [], (err, results) => {
             if (err) {
                 console.error('Error executing query:', err);
                 reject(err);
@@ -68,6 +69,21 @@ class Project {
             });
         });
     }
+
+        // Get project type
+        static getProjectType(){  
+            return new Promise((resolve, reject) => {
+                const sql = `SELECT t.type, t.id FROM project_type t WHERE t.blockstatus = '0' AND t.deletestatus = '0'`;
+                pool.query(sql, [], (err, results) => {
+                if (err) {
+                    console.error('Error executing query:', err);
+                    reject(err);
+                } else {
+                    resolve(results);
+                }
+                });
+            });
+        }
 
 }
 

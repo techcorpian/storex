@@ -4,10 +4,10 @@ dotenv.config();
 
 // Insert Projects
 export const insertProject = (req, res) => {
-  const { name, location_id } = req.body;
+  const { name, location_id, type_id } = req.body;
 
   // Store project details in MySQL database
-  const newProject = new Project({ name, location_id });
+  const newProject = new Project({ name, location_id, type_id });
   Project.insertProject(newProject, (err, data) => {
     if (err) {
       res.status(500).send({ message: err.message || 'Failed to upload project' });
@@ -41,4 +41,18 @@ export const getLocations = async (req,res) => {
   }
  
 };
+
+// Get all project types
+export const getProjectType = async (req,res) => {
+  try {
+    const results = await Project.getProjectType();
+    res.json(results);
+  } catch (err) {
+    console.error('Error executing query:', err);
+    res.status(500).send('Internal Server Error');
+  }
+ 
+};
+
+
 

@@ -33,7 +33,7 @@ const SideLinks = () => {
   return (
     <ul className="side-links">
     <div className="profile-card">
-      <img src={Profile} className='profile_picture' height={60} width={60}/><span>MUSHTHAQ AMEEN <div className='text-sky-300 font-extralight'>Super Admin</div></span>
+      <img src={Profile} className='profile_picture' height={60} width={60}/><span>{currentUser.username} <div className='text-sky-300 font-extralight'>Super Admin</div></span>
     </div>
     
     <div className="nav-bar">
@@ -88,7 +88,7 @@ const SideLinks = () => {
         )
       })}
       <div className='pt-[100px] px-3'>
-        <Link className="flex justify-between items-center bg-yellow-600 p-2 rounded-lg" onClick={handleLogout}><div className="flex items-center"><CiLogout /><span className='ml-2'>Logout</span></div></Link>
+        <Link className="flex justify-between items-center bg-yellow-600 p-2 rounded-lg" onClick={handleLogout}><div className="flex items-center"><CiLogout /><span className='ml-2 text-sm'>Logout</span></div></Link>
       </div>
       </div>
 

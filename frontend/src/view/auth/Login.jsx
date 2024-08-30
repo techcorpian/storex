@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AuthService from '../../services/auth.service.jsx';
+import CustomInput from '../shared/inputs/CustomInput.jsx'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -42,34 +43,15 @@ const Login = () => {
     <>
       <div className="h-screen flex flex-col items-center justify-center">
         <div className=''>
-          <div className="px-6 pb-6 border shadow-lg bg-white h-[100%]">
-            <header className='border-b py-5 text-sky-600'>
+          <div className="px-6 pb-6 border shadow-lg rounded-xl bg-white h-[100%] w-[500px]">
+            <header className='py-5 text-sky-600'>
               <span className='text-xl font-extrabold'>LOGIN TO</span>
               <div className='leading-5'>Crescent Teacher Portal</div>
             </header>
             <form onSubmit={handleLogin} className='py-3'>
-              <div className="form-group py-3">
-                <label htmlFor="username" className='relative top-1'>Username</label>
-                <input
-                  type="text"
-                  className="form-control border border-sky-200 ml-6 float-right rounded-md text-md p-1 w-[100%] my-2"
-                  name="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="form-group py-3">
-                <label htmlFor="password" className='relative top-1'>Password</label>
-                <input
-                  type="password"
-                  className="form-control border border-sky-200 ml-6 float-right rounded-md text-md p-1 w-[100%] my-2"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
+              <div className='flex flex-col gap-6'>
+                <CustomInput id='username' type='text' label='Username' value={username} setValue={(e) => setUsername(e.target.value)} />
+                <CustomInput id='password' type='password' label='Password' value={password} setValue={(e) => setPassword(e.target.value)} />
               </div>
 
               {message && (

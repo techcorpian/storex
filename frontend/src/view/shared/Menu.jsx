@@ -70,7 +70,7 @@ const Menu = () => {
                 </nav>
             </SideDrawer>
 
-            <div className="w-[100%] text-black z-20 fixed bg-cyan-100" ref={menuRef}>
+            <div className="w-[100%] text-black z-20 fixed bg-[#E0FFFF]" ref={menuRef}>
                 <div className="flex justify-between items-center py-3 px-3 md:px-6">
                     <div className="flex justify-between items-center w-full">
                         <div className="md:hidden">
